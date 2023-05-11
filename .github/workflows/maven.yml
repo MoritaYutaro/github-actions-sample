@@ -29,4 +29,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-
+    # 成果物の追加
+    - uses: actions/upload-artifact@v3
+      with:
+        name: 成果物のjarファイル
+        path: target/*.jar
